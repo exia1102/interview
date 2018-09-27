@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>dom box</title>
+</head>
+<style media="screen">
+    html *{
+        padding:0;
+        margin: 0;
+    }
+</style>
+
+<body>
+
+    <section id="sec">
+        <style media="screen">
+            #sec{
+                background: #f00;
+            }
+            .child{
+                height:100px;
+                margin-top: 10px;
+                background:yellow;
+            }
+        </style>
+        <article class="child">
+
+        </article>
+    </section>
+
+
+        <section id="margin">
+            <style media="screen">
+                #margin{
+                    background: pink;
+                    overflow: hidden;
+                }
+                #margin>p{
+                    margin:5px auto 25px;
+                    background:red;
+                }
+            </style>
+            <p>1</p>
+            <div style="overflow: hidden">
+                <p>2</p>
+            </div>
+            <p>3</p>
+        </section>
+
+        <section id="layout">
+            <style media="screen">
+                #layout{
+                    background:red;
+                }
+                #layout .left{
+                    float:left;
+                    width:100px;
+                    height:100px;
+                    background:pink;
+                }
+                #layout .right{
+                    height: 110px;
+                    background: #CCCCCC;
+                    overflow: auto;
+                }
+            </style>
+            <div class="left"></div>
+            <div class="right"></div>
+        </section>
+
+        <section id="float">
+            <style media="screen">
+                #float{
+                    background: red;
+                    overflow: hidden;
+                }
+                #float .float{
+                    float:left;
+                    font-size: 2rem;
+                }
+            </style>
+            <div class="float">I am float</div>
+        </section>
+</body>
+
+
+</html>

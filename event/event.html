@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>event</title>
+</head>
+<body>
+    <div id="ev">
+        <style media="screen">
+            #ev{
+                width:300px;
+                height: 300px;
+                background: red;
+                color: #fff4f4;
+                line-height: 100px;
+            }
+        </style>
+        target
+    </div>
+    <script type="text/javascript">
+        var ev =document.getElementById('ev');
+
+        window.addEventListener('click',function(){
+            console.log('window capture')
+        },true)
+
+        document.addEventListener('click',function(){
+            console.log('document capture')
+        },true)
+
+        document.documentElement.addEventListener('click',function(){
+            console.log('Html capture')
+        },true)
+        document.body.addEventListener('click',function(){
+            console.log('body capture')
+        },true)
+
+        ev.addEventListener('click',function(){
+            console.log('target capture')
+        },true)
+
+        var eve= new Event('test');
+        ev.addEventListener('test',function(){
+            console.log('test capture')
+        })
+        ev.dispatchEvent(eve)
+
+        setTimeout(function(){
+            ev.dispatchEvent(eve);
+        },1000)
+
+    </script>
+</body>
+</html>
